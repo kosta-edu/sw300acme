@@ -7,5 +7,9 @@ import java.util.List;
 
 @Service
 public interface ScheduleService {
-    public List<Clazz> scheduledClasses(Long courseId);
+    List<Clazz> scheduledClasses(Long courseId);
+    void associateVenuForClassDay(Long classDayId,Long venuId);
+    void associateInstructorForClassDay(Long classDayId,Long instructorId);
+    void detailOfClassesForCourse(Long courseId);
+    void detailOfClass(Long clazzId);
 }
