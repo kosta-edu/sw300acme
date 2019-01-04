@@ -1,9 +1,12 @@
 package com.sw300.acme.course;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Data
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,28 +27,4 @@ public class Job {
 
     @ManyToMany
     private List<Industry> industryList;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

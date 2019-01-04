@@ -1,8 +1,11 @@
 package com.sw300.acme.customer;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,6 +27,4 @@ public class Customer {
 
     public Customer() {
     }
-
-
 }
