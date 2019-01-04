@@ -1,5 +1,6 @@
 package com.sw300.acme.course;
 
+import com.sw300.acme.clazz.Clazz;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,6 +19,9 @@ public class Course {
     private int maxEnrollment;
     private int minEnrollment;
     private float unitPrice;
+
+    @ManyToOne
+    private Clazz clazz;
 
     @ManyToMany
     private List<Discipline> disciplineList;

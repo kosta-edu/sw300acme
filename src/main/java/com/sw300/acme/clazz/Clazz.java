@@ -1,5 +1,6 @@
 package com.sw300.acme.clazz;
 
+import com.sw300.acme.course.Course;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,6 +18,9 @@ public class Clazz {
 
     @OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL)
     private List<ClassDay> classDayList;
+
+    @OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL)
+    private List<Course> courseList;
 
     public Clazz() {
     }

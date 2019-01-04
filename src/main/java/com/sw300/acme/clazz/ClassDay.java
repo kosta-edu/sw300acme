@@ -1,9 +1,11 @@
 package com.sw300.acme.clazz;
 
+import com.sw300.acme.sme.Instructor;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -23,4 +25,7 @@ public class ClassDay {
 
     @ManyToOne
     private Venu venu;
+
+    @OneToMany(mappedBy = "classDay", cascade = CascadeType.ALL)
+    private List<Instructor> instructorList;
 }

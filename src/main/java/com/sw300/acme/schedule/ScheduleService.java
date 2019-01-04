@@ -1,4 +1,8 @@
 package com.sw300.acme.schedule;
 
-public class ScheduleService {
+import org.springframework.stereotype.Service;
+
+@Service
+public interface ScheduleService {
+    public void schedule();
 }
