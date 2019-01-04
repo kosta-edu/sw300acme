@@ -1,9 +1,12 @@
 package com.sw300.acme.clazz;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Data
 public class Clazz {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,21 +19,5 @@ public class Clazz {
     private List<ClassDay> classDayList;
 
     public Clazz() {
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public double getEvaluationRate() {
-        return evaluationRate;
-    }
-
-    public void setEvaluationRate(double evaluationRate) {
-        this.evaluationRate = evaluationRate;
     }
 }

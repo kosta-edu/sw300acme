@@ -1,9 +1,12 @@
 package com.sw300.acme.clazz;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Data
 public class ClassDay {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
