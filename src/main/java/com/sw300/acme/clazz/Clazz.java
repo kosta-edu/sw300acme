@@ -16,11 +16,11 @@ public class Clazz {
     private String status;
     private double evaluationRate;
 
-    @OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL)
-    private List<ClassDay> classDayList;
+    @ManyToOne
+    private Course course;
 
     @OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL)
-    private List<Course> courseList;
+    private List<ClassDay> classDayList;
 
     public Clazz() {
     }

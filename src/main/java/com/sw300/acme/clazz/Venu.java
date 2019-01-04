@@ -1,5 +1,6 @@
 package com.sw300.acme.clazz;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class Venu {
     private int capacity;
     private String map;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "venu", cascade = CascadeType.ALL)
     private List<ClassDay> classDayList;
 }

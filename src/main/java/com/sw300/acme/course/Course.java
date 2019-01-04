@@ -20,8 +20,8 @@ public class Course {
     private int minEnrollment;
     private float unitPrice;
 
-    @ManyToOne
-    private Clazz clazz;
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    private List<Clazz> clazzList;
 
     @ManyToMany
     private List<Discipline> disciplineList;

@@ -1,11 +1,13 @@
 package com.sw300.acme.schedule;
 
-import com.sw300.acme.clazz.ClazzRepository;
+import com.sw300.acme.clazz.Clazz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class ScheduleController {
@@ -18,13 +20,10 @@ public class ScheduleController {
     }
 
     @RequestMapping(value = "/schedules", method = RequestMethod.GET)
-    public String schedules() {
-        return "schedules";
-    }
-
-    @RequestMapping(value = "/schedule", method = RequestMethod.GET)
-    public String schedule(
-            @RequestParam(value="id") int id){
-        return "schedule";
+    public String schedules(
+            @RequestParam(value="courseId") Long courseId
+    ) {
+        final List<Clazz> clazzes = scheduleService.scheduledClasses(courseId);
+        return "clazzes";
     }
 }
