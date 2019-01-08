@@ -27,9 +27,9 @@ public class JPAScheduleService implements ScheduleService{
     public List<Clazz> scheduledClasses(Long courseId) {
         final Optional<Course> course = courseRepo.findById(courseId);
         if(course.isPresent()){
-            final Course course1 = course.get();
-            course1.getClazzList();
-            course1.getDescription();
+//            final Course course1 = course.get();
+//            course1.getClazzList();
+//            course1.getDescription();
         }
         return null;
     }

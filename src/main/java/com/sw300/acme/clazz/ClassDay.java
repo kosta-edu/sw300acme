@@ -28,4 +28,14 @@ public class ClassDay {
 
     @OneToMany(mappedBy = "classDay", cascade = CascadeType.ALL)
     private List<Instructor> instructorList;
+
+    public ClassDay(){}
+
+    public ClassDay(int number, Date date, Date startTime, Date endTime, int instructorPay) {
+        this.number = number;
+        this.date = date;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.instructorPay = instructorPay;
+    }
 }

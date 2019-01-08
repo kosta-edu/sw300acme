@@ -21,4 +21,13 @@ public class Venu {
     @JsonIgnore
     @OneToMany(mappedBy = "venu", cascade = CascadeType.ALL)
     private List<ClassDay> classDayList;
+
+    public Venu(){}
+
+    public Venu(String name, String address, int capacity, String map) {
+        this.name = name;
+        this.address = address;
+        this.capacity = capacity;
+        this.map = map;
+    }
 }
