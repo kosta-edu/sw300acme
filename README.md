@@ -86,6 +86,10 @@
 }
 </code></pre>
 
+## Tests
+
+> given/when/then style
+
 ## Frameworks
 
 - [Spring Boot](http://spring.io/projects/spring-boot)

@@ -13,7 +13,8 @@ public class Clazz {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private ClazzStatus status;
     private double evaluationRate;
 
     @ManyToOne
@@ -23,5 +24,10 @@ public class Clazz {
     private List<ClassDay> classDayList;
 
     public Clazz() {
+    }
+
+    public Clazz(ClazzStatus status, double evaluationRate) {
+        this.status = status;
+        this.evaluationRate = evaluationRate;
     }
 }
