@@ -90,6 +90,9 @@
 
 > given/when/then style
 
+- ClazzTest: Venu,Clazz,ClassDay 테스트 케이스
+
+
 ## Frameworks
 
 - [Spring Boot](http://spring.io/projects/spring-boot)

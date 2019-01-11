@@ -1,8 +1,6 @@
 package com.sw300.acme.schedule;
 
-import com.sw300.acme.clazz.Clazz;
-import com.sw300.acme.clazz.ClazzRepository;
-import com.sw300.acme.clazz.VenuRepository;
+import com.sw300.acme.clazz.*;
 import com.sw300.acme.course.Course;
 import com.sw300.acme.course.CourseRepository;
 import com.sw300.acme.sme.InstructorRepository;
@@ -15,7 +13,7 @@ import java.util.Optional;
 @Service
 public class JPAScheduleService implements ScheduleService{
     @Autowired
-    private ClazzRepository clazzRepo;
+    private ClassDayRepository classDayRepo;
     @Autowired
     private CourseRepository courseRepo;
     @Autowired
@@ -26,17 +24,17 @@ public class JPAScheduleService implements ScheduleService{
     @Override
     public List<Clazz> scheduledClasses(Long courseId) {
         final Optional<Course> course = courseRepo.findById(courseId);
-        if(course.isPresent()){
-//            final Course course1 = course.get();
-//            course1.getClazzList();
-//            course1.getDescription();
-        }
-        return null;
+        return (course.isPresent()) ? course.get().getClazzList() : null;
     }
 
     @Override
     public void associateVenuForClassDay(Long classDayId, Long venuId) {
-
+        final Optional<ClassDay> classDay = classDayRepo.findById(classDayId);
+        final Optional<Venu> venu = venuRepo.findById(venuId);
+        if(venu.isPresent() && classDay.isPresent()){
+            final ClassDay classDay1 = classDay.get();
+            classDay1.setVenu(venu.get());
+        }
     }
 
     @Override

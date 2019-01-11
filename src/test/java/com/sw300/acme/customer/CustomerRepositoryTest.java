@@ -1,10 +1,9 @@
-package com.sw300.acme;
+package com.sw300.acme.customer;
 
-import com.sw300.acme.customer.Customer;
+import static junit.framework.TestCase.assertNotNull;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import com.sw300.acme.customer.CustomerRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,7 +27,7 @@ public class CustomerRepositoryTest {
     @Test
     public void createAndLoadCustomer() {
         //given
-        customerRepository.save(Customer.builder().
+        final Customer customer = customerRepository.save(Customer.builder().
                 firstName("세욱").
                 lastName("김").
                 job("dev").
@@ -38,12 +37,12 @@ public class CustomerRepositoryTest {
                 membership(true).
                 build()
         );
-
         //when
         List<Customer> customerList = (List<Customer>) customerRepository.findAll();
-
         //then
-        Customer customer = customerList.get(0);
-        assertThat(customer.getEmail(), is("return@rsquare.co.kr"));
+        Customer firstCustomer = customerList.get(0);
+        assertNotNull(firstCustomer);
+        assertThat(firstCustomer.getEmail(), is("return@rsquare.co.kr"));
+        assertThat(customer.getId(), is(firstCustomer.getId()));
     }
 }

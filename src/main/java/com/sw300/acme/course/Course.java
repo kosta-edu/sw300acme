@@ -26,9 +26,5 @@ public class Course {
     @ManyToMany
     private List<Discipline> disciplineList;
 
-    public List<Clazz> getClazzList(){
-        return this.clazzList;
-    }
-
     //TODO 재귀관계를 어떻게 구현할 것인가
 }
