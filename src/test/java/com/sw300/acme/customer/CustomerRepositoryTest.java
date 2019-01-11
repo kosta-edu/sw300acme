@@ -17,17 +17,17 @@ import java.util.List;
 @SpringBootTest
 public class CustomerRepositoryTest {
     @Autowired
-    CustomerRepository customerRepository;
+    CustomerRepository customerRepo;
 
     @After
     public void cleanup() {
-        customerRepository.deleteAll();
+        customerRepo.deleteAll();
     }
 
     @Test
     public void saveAndFindAll() {
         //given
-        final Customer customer = customerRepository.save(Customer.builder().
+        final Customer customer = customerRepo.save(Customer.builder().
                 firstName("세욱").
                 lastName("김").
                 job("dev").
@@ -37,8 +37,9 @@ public class CustomerRepositoryTest {
                 membership(true).
                 build()
         );
+        
         //when
-        List<Customer> customerList = (List<Customer>) customerRepository.findAll();
+        List<Customer> customerList = (List<Customer>) customerRepo.findAll();
         Customer firstCustomer = customerList.get(0);
         //then
         assertNotNull(firstCustomer);
