@@ -25,7 +25,7 @@ public class CustomerRepositoryTest {
     }
 
     @Test
-    public void createAndLoadCustomer() {
+    public void saveAndFindAll() {
         //given
         final Customer customer = customerRepository.save(Customer.builder().
                 firstName("세욱").
@@ -39,8 +39,8 @@ public class CustomerRepositoryTest {
         );
         //when
         List<Customer> customerList = (List<Customer>) customerRepository.findAll();
-        //then
         Customer firstCustomer = customerList.get(0);
+        //then
         assertNotNull(firstCustomer);
         assertThat(firstCustomer.getEmail(), is("return@rsquare.co.kr"));
         assertThat(customer.getId(), is(firstCustomer.getId()));
