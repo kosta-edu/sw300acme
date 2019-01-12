@@ -37,7 +37,7 @@ public class CustomerRepositoryTest {
                 membership(true).
                 build()
         );
-        
+
         //when
         List<Customer> customerList = (List<Customer>) customerRepo.findAll();
         Customer firstCustomer = customerList.get(0);

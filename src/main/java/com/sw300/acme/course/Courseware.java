@@ -14,7 +14,16 @@ public class Courseware {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String type;
+    private CoursewareType type;
     private String title;
     private String authorType;
+
+    public Courseware() {
+    }
+
+    public Courseware(CoursewareType type, String title, String authorType) {
+        this.type = type;
+        this.title = title;
+        this.authorType = authorType;
+    }
 }

@@ -26,5 +26,18 @@ public class Course {
     @ManyToMany
     private List<Discipline> disciplineList;
 
+    public Course() {
+    }
+
+    public Course(String title, int duration, String description, int maxEnrollment,
+                  int minEnrollment, float unitPrice) {
+        this.title = title;
+        this.duration = duration;
+        this.description = description;
+        this.maxEnrollment = maxEnrollment;
+        this.minEnrollment = minEnrollment;
+        this.unitPrice = unitPrice;
+    }
+
     //TODO 재귀관계를 어떻게 구현할 것인가
 }

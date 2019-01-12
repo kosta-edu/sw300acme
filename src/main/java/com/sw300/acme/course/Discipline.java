@@ -20,4 +20,12 @@ public class Discipline {
 
     @ManyToMany
     private List<Topic> topicList;
+
+    public Discipline() {
+    }
+
+    public Discipline(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }
