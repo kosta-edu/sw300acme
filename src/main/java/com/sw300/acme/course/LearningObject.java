@@ -20,4 +20,12 @@ public class LearningObject {
 
     @ManyToMany
     private List<Practice> practiceList;
+
+    public LearningObject() {
+    }
+
+    public LearningObject(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

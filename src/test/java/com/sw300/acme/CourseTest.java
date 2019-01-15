@@ -18,7 +18,6 @@ public class CourseTest {
     private static String COURSE_ENDPOINT = "http://localhost:8080/courses";
     private static String COURSEWARES_ENDPOINT = "http://localhost:8080/coursewares";
     private static String DISCIPLINE_ENDPOINT = "http://localhost:8080/disciplines";
-    private static String INDUSTRY_ENDPOINT = "http://localhost:8080/industrys";
 
     @Autowired
     private TestRestTemplate template;
