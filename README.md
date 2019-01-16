@@ -86,11 +86,21 @@
 }
 </code></pre>
 
+## Build
+
+> acme 어플리케이션 빌드: ./gradlew build
+>
+> 도커 이미지 빌드: ./docker build -t acme:latest .
+
 ## Tests
 
 > given/when/then style
 
+- CourseTest: Course,CourseWare,Discipline
+- JobTest: Industry,Practice,Theory,LearningObject,Job
 - ClazzTest: Venu,Clazz,ClassDay 테스트 케이스
+- CustomerRepositoryTest: CustomerRepository
+- ScheduleTest: 
 
 
 ## Frameworks
