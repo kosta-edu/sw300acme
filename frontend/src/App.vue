@@ -47,7 +47,8 @@
       drawerRight: null,
       items: [
         {title: 'Home', icon: 'home', to: '/'},
-        {title: 'About', icon: 'question_answer', to: '/about'}
+        {title: 'Venu', icon: 'location_on', to:'/venu'},
+        {title: 'About', icon: 'question_answer', to: '/about'},
       ]
     }),
     props: {
