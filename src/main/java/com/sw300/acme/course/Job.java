@@ -13,7 +13,7 @@ public class Job {
     private Long id;
 
     private String title;
-    private String level;
+    private int level;
     private String description;
 
     @ManyToMany
@@ -27,4 +27,13 @@ public class Job {
 
     @ManyToMany
     private List<Industry> industryList;
+
+    public Job() {
+    }
+
+    public Job(String title, int level, String description) {
+        this.title = title;
+        this.level = level;
+        this.description = description;
+    }
 }

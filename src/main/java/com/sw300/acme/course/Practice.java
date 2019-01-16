@@ -20,4 +20,12 @@ public class Practice {
 
     @ManyToMany
     private List<Job> jobList;
+
+    public Practice() {
+    }
+
+    public Practice(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }
