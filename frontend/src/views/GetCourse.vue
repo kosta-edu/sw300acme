@@ -1,28 +1,29 @@
 <template>
-    <div class="get-course">
-        <v-btn color="primary" @click="getCourseList">GetVenu</v-btn>
-        <v-list>
-            <v-list-group
+    <div>
+        <v-expansion-panel>
+            <v-expansion-panel-content
                     v-for="(item, idx) in response"
                     :key="idx"
-
-                    no-action
+                    class="grey lighten-4"
             >
-                <v-list-tile slot="activator">
-                    <v-list-tile-content>
-                        <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-
-                <v-list-tile>
-                    <v-list-tile-content>
-                        <v-list-tile-title>{{ item.description }}</v-list-tile-title>
+                <div slot="header">
+                    <h3>{{ item.title }}</h3>
+                </div>
+                <v-card>
+                    <v-card-text>
+                        Title : {{ item.title }}<br />
+                        Duration : {{ item.duration }}<br />
+                        Max enrollment : {{ item.maxEnrollment }}<br />
+                        Min enrollment : {{ item.minEnrollment }}<br />
+                        Unit price : {{ item.unitPrice }}<br /><br />
                         <v-btn color="primary" @click="selectCourse(idx)">Select</v-btn>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list-group>
-            <span v-if="response.length <= 0">Please, get venu!</span>
-        </v-list>
+                    </v-card-text>
+                </v-card>
+            </v-expansion-panel-content>
+            <span v-if="response.length <= 0">
+                <h3>Do  not exist course.</h3>
+            </span>
+        </v-expansion-panel>
     </div>
 </template>
 
@@ -51,6 +52,9 @@
                 this.$emit('update:selectedCourse', this.response[idx]);
                 this.$emit('update:step', this.step + 1);
             }
+        },
+        created() {
+            this.getCourseList();
         }
     }
 </script>
