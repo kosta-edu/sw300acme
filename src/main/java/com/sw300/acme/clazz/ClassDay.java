@@ -1,5 +1,8 @@
 package com.sw300.acme.clazz;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.sw300.acme.sme.Instructor;
 import lombok.Data;
 
@@ -21,6 +24,7 @@ public class ClassDay {
     private int instructorPay;
 
     @ManyToOne
+    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
     private Clazz clazz;
 
     @ManyToOne

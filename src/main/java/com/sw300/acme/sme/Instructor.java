@@ -1,5 +1,7 @@
 package com.sw300.acme.sme;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.sw300.acme.clazz.ClassDay;
 import lombok.Data;
 
@@ -20,6 +22,7 @@ public class Instructor {
     private String bankAccount;
 
     @ManyToOne
+    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
     private ClassDay classDay;
 
     public Instructor() {

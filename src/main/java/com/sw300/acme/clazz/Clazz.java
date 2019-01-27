@@ -1,5 +1,9 @@
 package com.sw300.acme.clazz;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.sw300.acme.course.Course;
 import lombok.Data;
 
@@ -18,6 +22,7 @@ public class Clazz {
     private double evaluationRate;
 
     @ManyToOne
+    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
     private Course course;
 
     @OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL)
