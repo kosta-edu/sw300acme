@@ -21,14 +21,26 @@ public class Clazz {
     private ClazzStatus status;
     private double evaluationRate;
 
-    @ManyToOne
-    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
+    @ManyToOne @JoinColumn(name = "courseId")
+   // @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
     private Course course;
 
     @OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL)
     private List<ClassDay> classDayList;
 
+    private float price;
+
     public Clazz() {
+    }
+
+
+    @PostPersist
+    public void copyPriceFromUnitPrice(){
+//        try {
+//            setPrice(getCourse().getUnitPrice());
+//        }catch(RuntimeException e){
+//            throw new CourseNotFoundException();
+//        }
     }
 
     public Clazz(ClazzStatus status, double evaluationRate) {

@@ -3,6 +3,7 @@ package com.sw300.acme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -11,8 +12,12 @@ import org.springframework.web.filter.CorsFilter;
 @SpringBootApplication
 public class AcmeApplication {
 
+    static ApplicationContext applicationContext;
+
+    public static ApplicationContext getApplicationContext(){return applicationContext;}
+
     public static void main(String[] args) {
-        SpringApplication.run(AcmeApplication.class, args);
+        applicationContext = SpringApplication.run(AcmeApplication.class, args);
     }
 
 
