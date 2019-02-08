@@ -36,11 +36,11 @@ public class Clazz {
 
     @PostPersist
     public void copyPriceFromUnitPrice(){
-//        try {
-//            setPrice(getCourse().getUnitPrice());
-//        }catch(RuntimeException e){
-//            throw new CourseNotFoundException();
-//        }
+        try {
+            setPrice(getCourse().getUnitPrice());
+        }catch(RuntimeException e){
+            throw new CourseNotFoundException();
+        }
     }
 
     public Clazz(ClazzStatus status, double evaluationRate) {

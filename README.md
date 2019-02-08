@@ -31,7 +31,7 @@
 (wait for server booting, and open a new shell)
 
 http localhost:8080/courses title="SW 300" unitPrice=100
-http localhost:8080/clazzs course= "http://localhost:8080/courses/1" 
+http localhost:8080/clazzs course="http://localhost:8080/courses/1" 
 http PATCH localhost:8080/clazzs/2 price=50   # 가격 특별 할인 
 http localhost:8080/customers firstName="장" lastName="진영"
 http localhost:8080/enrollments customer= "http://localhost:8080/customers/3" clazz="http://localhost:8080/clazzs/2"
