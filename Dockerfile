@@ -2,6 +2,7 @@ FROM gradle:jdk10 as builder
 
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
+ENV GRADLE_USER_HOME=~/.gradle
 RUN gradle build -x test
 
 
