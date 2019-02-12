@@ -4,6 +4,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 
-@RepositoryRestResource(collectionResourceRel = "classday", path = "classdays")
+//@RepositoryRestResource(collectionResourceRel = "classday", path = "classdays")
 public interface ClassDayRepository extends PagingAndSortingRepository<ClassDay, Long> {
 }
