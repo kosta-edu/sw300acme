@@ -2,7 +2,7 @@ package com.sw300.acme.sme;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.sw300.acme.clazz.ClassDay;
+import com.sw300.acme.clazz.ClazzDay;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -23,7 +23,7 @@ public class Instructor {
 
     @ManyToOne
     @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
-    private ClassDay classDay;
+    private ClazzDay clazzDay;
 
     public Instructor() {
     }

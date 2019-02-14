@@ -8,6 +8,9 @@ yarn install
 ### Compiles and hot-reloads for development
 ```
 yarn run serve
+
+(if there vue-cli doesn't exist, type: "mvn install" and try again)
+(if there node.js version is not latest, type: "npm install -g n; n stable")
 ```
 
 ### Compiles and minifies for production

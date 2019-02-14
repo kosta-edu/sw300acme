@@ -20,7 +20,7 @@ public class Venu {
 
     @JsonIgnore
     @OneToMany(mappedBy = "venu", cascade = CascadeType.ALL)
-    private List<ClassDay> classDayList;
+    private List<ClazzDay> clazzDayList;
 
     public Venu(){}
 

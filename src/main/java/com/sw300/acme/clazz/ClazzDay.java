@@ -12,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class ClassDay {
+public class ClazzDay {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -30,12 +30,12 @@ public class ClassDay {
     @ManyToOne
     private Venu venu;
 
-    @OneToMany(mappedBy = "classDay", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "clazzDay", cascade = CascadeType.ALL)
     private List<Instructor> instructorList;
 
-    public ClassDay(){}
+    public ClazzDay(){}
 
-    public ClassDay(int number, Date date, Date startTime, Date endTime, int instructorPay) {
+    public ClazzDay(int number, Date date, Date startTime, Date endTime, int instructorPay) {
         this.number = number;
         this.date = date;
         this.startTime = startTime;

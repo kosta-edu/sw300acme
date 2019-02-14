@@ -26,7 +26,7 @@ public class Clazz {
     private Course course;
 
     @OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL)
-    private List<ClassDay> classDayList;
+    private List<ClazzDay> clazzDayList;
 
     private float price;
 

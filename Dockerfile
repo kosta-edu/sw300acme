@@ -23,4 +23,4 @@ COPY --from=builder /app/target/*.jar /app.jar
 ENV PORT 8080
 
 # Run the web service on container startup.
-CMD ["java","-Djava.security.egd=file:/dev/./urandom","-Dserver.port=${PORT}","-jar","/app.jar"]
+CMD ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=event-driven","-Dserver.port=${PORT}","-jar","/app.jar"]

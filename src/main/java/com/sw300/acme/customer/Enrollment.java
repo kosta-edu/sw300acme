@@ -1,10 +1,18 @@
 package com.sw300.acme.customer;
 
+import com.sw300.acme.AcmeApplication;
+import com.sw300.acme.EventProducer;
+import com.sw300.acme.Streams;
 import com.sw300.acme.clazz.Clazz;
 import lombok.Data;
+import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.MessageHeaders;
+import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.util.MimeTypeUtils;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Properties;
 import java.util.Set;
 
 @Entity
@@ -75,5 +83,35 @@ public class Enrollment {
 
     public void setPayments(Set<Payment> payments) {
         this.payments = payments;
+    }
+
+    @PostPersist
+    private void publishEnrolledEvent(){
+//        Streams streams = AcmeApplication.getApplicationContext().getBean(Streams.class);
+
+//        MessageChannel messageChannel = streams.outboundChannel();
+//
+        Enrolled enrolled = new Enrolled();
+        enrolled.setClassId(""+getClazz().getId());
+        enrolled.setCourseTitle(""+getClazz().getCourse().getTitle());
+        enrolled.setCustomerId(""+getCustomer().getId());
+        enrolled.setCustomerName(""+getCustomer().getFirstName() + " " + getCustomer().getLastName());
+        enrolled.setHour(getClazz().getCourse().getDuration()*8);
+        enrolled.setPrice(getClazz().getPrice());
+//
+//        messageChannel.send(MessageBuilder
+//                .withPayload(enrolled)
+//                .setHeader("key", enrolled.getCustomerId())
+//                .setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON)
+//                .build());
+//
+//        System.out.println("Event published");
+
+
+        EventProducer producer = AcmeApplication.getApplicationContext().getBean(EventProducer.class);
+
+        producer.sendMessage(enrolled);
+
+
     }
 }

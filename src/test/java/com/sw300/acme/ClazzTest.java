@@ -1,6 +1,6 @@
 package com.sw300.acme;
 
-import com.sw300.acme.clazz.ClassDay;
+import com.sw300.acme.clazz.ClazzDay;
 import com.sw300.acme.clazz.Clazz;
 import com.sw300.acme.clazz.ClazzStatus;
 import com.sw300.acme.clazz.Venu;
@@ -63,12 +63,12 @@ public class ClazzTest {
         Date date = date(2019,2,1,0,0);
         Date start = date(2019,2,1,9,0);
         Date end = date(2019,2,1,18,0);
-        ClassDay classDay = new ClassDay(1,date,start,end,30);
+        ClazzDay clazzDay = new ClazzDay(1,date,start,end,30);
         //when
-        template.postForEntity(CLASSDAY_ENDPOINT,classDay,ClassDay.class);
+        template.postForEntity(CLASSDAY_ENDPOINT, clazzDay,ClazzDay.class);
         //then
-        ResponseEntity<ClassDay> classDayGetResponse
-                = template.getForEntity(CLASSDAY_ENDPOINT + "/3", ClassDay.class);
+        ResponseEntity<ClazzDay> classDayGetResponse
+                = template.getForEntity(CLASSDAY_ENDPOINT + "/3", ClazzDay.class);
         assertNotNull(classDayGetResponse.getBody());
         assertEquals(classDayGetResponse.getBody().getNumber(), 1);
     }
@@ -79,8 +79,8 @@ public class ClazzTest {
         Date date = date(2019,2,1,0,0);
         Date start = date(2019,2,1,9,0);
         Date end = date(2019,2,1,18,0);
-        ClassDay classDay = new ClassDay(1,date,start,end,30);
-        template.postForEntity(CLASSDAY_ENDPOINT,classDay,ClassDay.class);
+        ClazzDay clazzDay = new ClazzDay(1,date,start,end,30);
+        template.postForEntity(CLASSDAY_ENDPOINT, clazzDay,ClazzDay.class);
 
         Venu venu = new Venu("판교8","유스페이스2B동 8층",20,"https://goo.gl/maps/NzPSg74zBPy");
         template.postForEntity(VENU_ENDPOINT,venu,Venu.class);

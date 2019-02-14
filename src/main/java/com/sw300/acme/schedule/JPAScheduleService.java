@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class JPAScheduleService implements ScheduleService{
     @Autowired
-    private ClassDayRepository classDayRepo;
+    private ClazzDayRepository classDayRepo;
     @Autowired
     private CourseRepository courseRepo;
     @Autowired
@@ -32,22 +32,22 @@ public class JPAScheduleService implements ScheduleService{
 
     @Override
     public void associateVenuForClassDay(Long classDayId, Long venuId) {
-        final Optional<ClassDay> classDayResult = classDayRepo.findById(classDayId);
+        final Optional<ClazzDay> classDayResult = classDayRepo.findById(classDayId);
         final Optional<Venu> venu = venuRepo.findById(venuId);
         if(venu.isPresent() && classDayResult.isPresent()){
-            final ClassDay classDay = classDayResult.get();
-            classDay.setVenu(venu.get());
-            classDayRepo.save(classDay);
+            final ClazzDay clazzDay = classDayResult.get();
+            clazzDay.setVenu(venu.get());
+            classDayRepo.save(clazzDay);
         }
     }
 
     @Override
     public void associateInstructorForClassDay(Long classDayId, Long instructorId) {
-        final Optional<ClassDay> classDayResult = classDayRepo.findById(classDayId);
+        final Optional<ClazzDay> classDayResult = classDayRepo.findById(classDayId);
         final Optional<Instructor> instructorResult = instructorRepo.findById(instructorId);
         if(classDayResult.isPresent() && instructorResult.isPresent()){
             final Instructor instructor = instructorResult.get();
-            instructor.setClassDay(classDayResult.get());
+            instructor.setClazzDay(classDayResult.get());
             instructorRepo.save(instructor);
         }
     }
