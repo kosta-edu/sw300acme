@@ -15,9 +15,13 @@
 >
 > $> gradle run
 >
-> 도머 이미지를 가지고 실행한다.
+> 도커 이미지를 가지고 실행한다.
 > 
-> $> docker run -d -p 8080:8080 acme:{tag}
+> 데이터베이스를 h2가 아닌 MySQL 을 사용한다면 MySQL 데이터베이스를 준비한다.
+> 
+> - Database: acme
+> - User: acmeadmin
+> - Password: acmeadmin00
 
 ## Test
 
