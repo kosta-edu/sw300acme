@@ -15,7 +15,6 @@ public class Customer {
     private String firstName;
     private String lastName;
 
-    //TODO 관계로 전환할지 확인필요
     private String job;
     private String industry;
 
