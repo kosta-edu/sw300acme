@@ -33,4 +33,9 @@ public class UserTest {
         assertNotNull(userResponse.getBody());
         assertEquals(userResponse.getBody().getName(),user.getName());
     }
+
+    @Test
+    public void listUser(){
+        
+    }
 }

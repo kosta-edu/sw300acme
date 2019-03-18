@@ -15,7 +15,6 @@ public class AcmeApplication {
         SpringApplication.run(AcmeApplication.class, args);
     }
 
-
     @Bean
     public FilterRegistrationBean corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
