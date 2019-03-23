@@ -1,29 +1,27 @@
 # frontend
 
 ## Project setup
+
 ```
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 yarn run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 yarn run build
 ```
 
-### Run your tests
-```
-yarn run test
-```
+### Config Api Url
 
-### Lints and fixes files
-```
-yarn run lint
-```
+Edit `src/common/config.js`
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+export const BASE_URL = "Your Api Url";
+```
