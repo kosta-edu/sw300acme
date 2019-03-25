@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "no-unused-vars": "off",
+    "vue/require-prop-type-constructor": "off",
+    "no-console": "off"
+  }
+}

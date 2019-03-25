@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     getVuneList() {
-      axios
+      this.axios
         .get("/venus")
         .then(response => {
           this.response = response.data;

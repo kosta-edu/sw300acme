@@ -68,7 +68,7 @@ export default {
     const idxArr = this.selectedCourse._links.self.href.split("/");
     if (idxArr.length > 0) {
       this.courseId = idxArr[idxArr.length - 1];
-      axios
+      this.axios
         .get("/schedule-service/course-clazzes?courseId=" + this.courseId)
         .then(res => {
           this.classes = res.data;
