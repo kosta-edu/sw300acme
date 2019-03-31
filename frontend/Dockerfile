@@ -16,7 +16,7 @@ RUN yarn install
 COPY . .
 
 # build app for production with minification
-RUN yarn run serve
+RUN yarn run build
 
 EXPOSE 8080
-CMD [ "http-server", "dist" ]
+CMD [ "http-server", "target/dist" ]
