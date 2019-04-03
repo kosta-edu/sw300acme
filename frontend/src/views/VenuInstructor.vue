@@ -51,7 +51,7 @@ export default {
   watch: {
     selectedVenu(value) {
       const idxArr = value.split("/");
-      this.axios
+      this.$axios
         .post("/schedule-service/associate-venu", {
           classDayId: Number(this.getClassId()),
           venuId: Number(idxArr[idxArr.length - 1])
@@ -65,7 +65,7 @@ export default {
     },
     selectedInstructor(value) {
       const idxArr = value.split("/");
-      this.axios
+      this.$axios
         .post("/schedule-service/associate-instructor", {
           classDayId: Number(this.getClassId()),
           instructorId: Number(idxArr[idxArr.length - 1])
@@ -88,13 +88,13 @@ export default {
     }
   },
   created() {
-    this.axios
+    this.$axios
       .get("/venus")
       .then(res => {
         this.venus = res.data._embedded.venu;
       })
       .catch(e => this.errors.push(e));
-    this.axios
+    this.$axios
       .get("/instructors")
       .then(res => {
         const instructors = res.data._embedded.instructor;
