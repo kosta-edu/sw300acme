@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     getCourseList() {
-      this.axios
+      this.$axios
         .get("/courses")
         .then(res => {
           this.response = res.data._embedded.course;
