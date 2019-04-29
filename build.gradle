@@ -34,4 +34,8 @@ dependencies {
     runtimeOnly('mysql:mysql-connector-java')
     compileOnly('org.projectlombok:lombok')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-core
+    testImplementation('io.cucumber:cucumber-java:4.2.6')
+    testImplementation('io.cucumber:cucumber-junit:4.2.6')
 }

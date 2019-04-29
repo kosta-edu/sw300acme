@@ -39,6 +39,12 @@
 - CustomerRepositoryTest: CustomerRepository
 - ScheduleTest: 
 
+## BDD Test code
+
+> cucumber feature
+
+- CucumberRunner
+
 ## Repository Restful EndPoints
 
 <pre><code>
