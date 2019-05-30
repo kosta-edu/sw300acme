@@ -16,10 +16,13 @@ public class ClassDayRegistered extends DomainEvent{
 
         super();
 
+        if(getTitle()!=null)
+            setTitle(getTitle());
+        else if(clazzDay.getClazz()!=null)
+            setTitle(clazzDay.getClazz().getCourse().getTitle());
+
         setDate(clazzDay.getDate());
 
-        if(clazzDay.getClazz()!=null)
-            setTitle(clazzDay.getClazz().getCourse().getTitle());
     }
 
     Date date;

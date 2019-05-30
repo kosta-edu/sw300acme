@@ -1,5 +1,8 @@
 package com.sw300.acme.course;
 
+import com.sw300.acme.AcmeApplication;
+import com.sw300.acme.EventProducer;
+import com.sw300.acme.clazz.ClassDayRegistered;
 import com.sw300.acme.clazz.Clazz;
 import lombok.Data;
 
@@ -40,4 +43,14 @@ public class Course {
     }
 
     //TODO 재귀관계를 어떻게 구현할 것인가
+
+    @PostPersist
+    private void publishCourseRegisteredEvent(){
+
+        EventProducer producer = AcmeApplication.getApplicationContext().getBean(EventProducer.class);
+        producer.sendMessage(new CourseRegistered(this));
+
+        System.out.println("Event published");
+
+    }
 }
