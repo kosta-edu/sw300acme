@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sw300.acme.AcmeApplication;
+import com.sw300.acme.EventProducer;
 import com.sw300.acme.course.Course;
 import lombok.Data;
 
@@ -41,6 +43,14 @@ public class Clazz {
         }catch(RuntimeException e){
             throw new CourseNotFoundException();
         }
+    }
+
+    @PostRemove
+    public void publishCancelled(){
+
+        EventProducer producer = AcmeApplication.getApplicationContext().getBean(EventProducer.class);
+        producer.sendMessage(new ClassCancelled(this));
+
     }
 
     public Clazz(ClazzStatus status, double evaluationRate) {

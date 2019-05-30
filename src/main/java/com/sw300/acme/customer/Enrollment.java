@@ -113,5 +113,10 @@ public class Enrollment {
         producer.sendMessage(enrolled);
 
 
+        //이메일 발송
+
+        //대시보드 정보 업데이트
+
+
     }
 }

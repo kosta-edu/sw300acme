@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.sw300.acme.clazz.ClassCancelled;
+import com.sw300.acme.clazz.ClassDayRegistered;
 import com.sw300.acme.customer.Enrolled;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
@@ -14,6 +16,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.Properties;
 import java.util.concurrent.ThreadLocalRandom;
@@ -63,4 +66,35 @@ public class EventProducer {
 
     }
 
+    public void sendMessage(ClassDayRegistered classDayRegistered){
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = null;
+
+        try {
+            json = objectMapper.writeValueAsString(classDayRegistered);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("JSON format exception", e);
+        }
+
+        ProducerRecord producerRecord = new ProducerRecord<>("class.topic", classDayRegistered.getDate().toString(), json);
+
+        producer.send(producerRecord);
+
+    }
+
+    public void sendMessage(ClassCancelled classCancelled) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = null;
+
+        try {
+            json = objectMapper.writeValueAsString(classCancelled);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("JSON format exception", e);
+        }
+
+        ProducerRecord producerRecord = new ProducerRecord<>("class.topic", classCancelled.getTitle().toString(), json);
+
+        producer.send(producerRecord);
+
+    }
 }
