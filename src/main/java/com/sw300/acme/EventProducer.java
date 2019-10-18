@@ -25,6 +25,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * Created by uengine on 2019. 2. 13..
  */
 @Component
+@Profile("event-driven")
 public class EventProducer {
 
     Producer<String, String> producer;
