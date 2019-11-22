@@ -1,12 +1,8 @@
 package com.sw300.acme.customer;
 
-import lombok.Builder;
-import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
-@Data
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,7 +25,6 @@ public class Customer {
     public Customer() {
     }
 
-    @Builder
     public Customer(String firstName, String lastName, String job, String industry,  String email, String phone, Boolean membership) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -38,5 +33,77 @@ public class Customer {
         this.email = email;
         this.phone = phone;
         this.membership = membership;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public String getIndustry() {
+        return industry;
+    }
+
+    public void setIndustry(String industry) {
+        this.industry = industry;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public boolean isMembership() {
+        return membership;
+    }
+
+    public void setMembership(boolean membership) {
+        this.membership = membership;
+    }
+
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }

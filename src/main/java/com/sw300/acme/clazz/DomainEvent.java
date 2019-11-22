@@ -1,12 +1,11 @@
 package com.sw300.acme.clazz;
 
-import lombok.Data;
+
 
 /**
  * Created by uengine on 2019. 4. 19..
  */
 
-@Data
 public class DomainEvent {
 
     public DomainEvent(){
@@ -14,4 +13,13 @@ public class DomainEvent {
     }
 
     String type;
+
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

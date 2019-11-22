@@ -1,12 +1,10 @@
 package com.sw300.acme.clazz;
 
 import com.sw300.acme.customer.Enrolled;
-import lombok.Data;
 
 /**
  * Created by uengine on 2019. 4. 19..
  */
-@Data
 public class ClassCancelled extends DomainEvent{
 
     public ClassCancelled(){}
@@ -19,4 +17,11 @@ public class ClassCancelled extends DomainEvent{
 
     String title;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

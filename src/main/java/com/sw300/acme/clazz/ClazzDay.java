@@ -8,7 +8,6 @@ import com.sw300.acme.EventProducer;
 import com.sw300.acme.Streams;
 import com.sw300.acme.customer.Enrolled;
 import com.sw300.acme.sme.Instructor;
-import lombok.Data;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
@@ -19,7 +18,6 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Data
 public class ClazzDay {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -73,4 +71,75 @@ public class ClazzDay {
 
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public int getInstructorPay() {
+        return instructorPay;
+    }
+
+    public void setInstructorPay(int instructorPay) {
+        this.instructorPay = instructorPay;
+    }
+
+    public Clazz getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(Clazz clazz) {
+        this.clazz = clazz;
+    }
+
+    public Venu getVenu() {
+        return venu;
+    }
+
+    public void setVenu(Venu venu) {
+        this.venu = venu;
+    }
+
+    public List<Instructor> getInstructorList() {
+        return instructorList;
+    }
+
+    public void setInstructorList(List<Instructor> instructorList) {
+        this.instructorList = instructorList;
+    }
 }

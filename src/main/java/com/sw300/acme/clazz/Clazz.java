@@ -7,13 +7,11 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.sw300.acme.AcmeApplication;
 import com.sw300.acme.EventProducer;
 import com.sw300.acme.course.Course;
-import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
 public class Clazz {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -57,4 +55,54 @@ public class Clazz {
         this.status = status;
         this.evaluationRate = evaluationRate;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public ClazzStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ClazzStatus status) {
+        this.status = status;
+    }
+
+    public double getEvaluationRate() {
+        return evaluationRate;
+    }
+
+    public void setEvaluationRate(double evaluationRate) {
+        this.evaluationRate = evaluationRate;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public List<ClazzDay> getClazzDayList() {
+        return clazzDayList;
+    }
+
+    public void setClazzDayList(List<ClazzDay> clazzDayList) {
+        this.clazzDayList = clazzDayList;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+
 }

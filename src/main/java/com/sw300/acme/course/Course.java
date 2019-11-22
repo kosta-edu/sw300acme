@@ -4,13 +4,11 @@ import com.sw300.acme.AcmeApplication;
 import com.sw300.acme.EventProducer;
 import com.sw300.acme.clazz.ClassDayRegistered;
 import com.sw300.acme.clazz.Clazz;
-import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -52,5 +50,77 @@ public class Course {
 
         System.out.println("Event published");
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getMaxEnrollment() {
+        return maxEnrollment;
+    }
+
+    public void setMaxEnrollment(int maxEnrollment) {
+        this.maxEnrollment = maxEnrollment;
+    }
+
+    public int getMinEnrollment() {
+        return minEnrollment;
+    }
+
+    public void setMinEnrollment(int minEnrollment) {
+        this.minEnrollment = minEnrollment;
+    }
+
+    public float getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(float unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public List<Clazz> getClazzList() {
+        return clazzList;
+    }
+
+    public void setClazzList(List<Clazz> clazzList) {
+        this.clazzList = clazzList;
+    }
+
+    public List<Discipline> getDisciplineList() {
+        return disciplineList;
+    }
+
+    public void setDisciplineList(List<Discipline> disciplineList) {
+        this.disciplineList = disciplineList;
     }
 }

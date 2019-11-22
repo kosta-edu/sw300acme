@@ -4,7 +4,6 @@ import com.sw300.acme.AcmeApplication;
 import com.sw300.acme.EventProducer;
 import com.sw300.acme.Streams;
 import com.sw300.acme.clazz.Clazz;
-import lombok.Data;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;

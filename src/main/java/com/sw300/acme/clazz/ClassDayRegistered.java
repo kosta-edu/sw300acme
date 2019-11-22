@@ -1,13 +1,10 @@
 package com.sw300.acme.clazz;
 
-import lombok.Data;
-
 import java.util.Date;
 
 /**
  * Created by uengine on 2019. 4. 19..
  */
-@Data
 public class ClassDayRegistered extends DomainEvent{
 
     public ClassDayRegistered(){} //for serialization
@@ -28,5 +25,19 @@ public class ClassDayRegistered extends DomainEvent{
     Date date;
     String title;
 
+    public Date getDate() {
+        return date;
+    }
 
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

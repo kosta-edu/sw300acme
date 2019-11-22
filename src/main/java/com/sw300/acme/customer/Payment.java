@@ -1,13 +1,11 @@
 package com.sw300.acme.customer;
 
 import com.sw300.acme.AcmeApplication;
-import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Data
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,4 +46,43 @@ public class Payment {
     }
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public Enrollment getEnrollment() {
+        return enrollment;
+    }
+
+    public void setEnrollment(Enrollment enrollment) {
+        this.enrollment = enrollment;
+    }
+
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
 }
