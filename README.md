@@ -1,23 +1,12 @@
 # sw300 demo project 'acme''
 
 
-## Build
-
-> acme 어플리케이션 빌드: ./gradlew build
->
-> 도커 이미지 빌드: ./docker build -t acme:{tag} .
-
-> 공개 도커 이미지 레파지터리: k16wire/sw300acme
-
-## Run
+## Build & Run
 
 > 소스를 가지고 직접 실행한다.
 >
-> $> gradle run
+> $> mvn spring-boot:run
 >
-> 도머 이미지를 가지고 실행한다.
-> 
-> $> docker run -d -p 8080:8080 acme:{tag}
 
 ## Test
 
@@ -26,7 +15,7 @@
 > [http://localhost:8080](http://localhost:8080)
 
 ```
-./gradlew bootRun
+mvn spring-boot:run
 
 (wait for server booting, and open a new shell)
 
