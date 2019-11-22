@@ -5,7 +5,7 @@
 
 > 소스를 가지고 직접 실행한다.
 >
-> $> mvn spring-boot:run
+> $> mvn spring-boot:run -Dmaven.test.skip=true
 >
 
 ## Test
